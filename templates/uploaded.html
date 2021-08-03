@@ -6,14 +6,16 @@
     <div class="col-md-5">
         <div class="image-container">
             <p class="text-left">Original Image</p>     
-            <a href="/static/uploads/{{ fname }}" target="_new"><img src="/static/uploads/{{ fname }}" class="upload-image-thumb"></a>
+            <a href="/{{ fname }}" target="_new"><img src="/{{ fname }}" class="upload-image-thumb"></a>
         </div>
         <div class="upload-form">
             <p class="text-left">Upload another?</p>
             <form action = "/uploader" method = "POST" 
                               enctype = "multipart/form-data">
                 <input type = "file" name = "file" />
-                <input type = "submit"/>
+                <input type = "submit"/><br/>
+                Format:<select name="fmt" id="fmt"><option>TEXT</option><option>XML</option></select>
+                &nbsp;UX:<select name="ux" id="ux"><option value="1">True</option><option value=0>False</option></select>
             </form>
         </div>        
     </div>
